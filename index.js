@@ -59,7 +59,7 @@ module.exports = function (file) {
   // adding template to Ember.TEMPLATES when it is required
   var fileName = path.basename(file)
   var namedTemplateJs = 'Ember.TEMPLATES["' +
-    fileName.replace(/\.handlebars$/, '').replace(/\.hbs$/, '').replace(/\./g, '/') +
+    fileName.replace(/\.(handlebars|hbs)$/, '').replace(/\./g, '/') +
     '"] = Ember.Handlebars.template(' + context.templatejs + ');'
 
   return namedTemplateJs;
